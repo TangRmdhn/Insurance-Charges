@@ -47,8 +47,14 @@ Dataset yang digunakan adalah [Insurance Dataset](https://www.kaggle.com/dataset
 
 ### Kondisi data
 - Tidak ada missing value
-- Terdapat 1 data duplikat ssehingga harus di hapus
-- Banyak outlier pada data dan dihapus menggunakan teknik IQR
+  
+![Data hilang](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/data%20hilang.png "a title")
+
+- Terdapat 1 data duplikat sehingga harus dihapus
+
+![DAta duplikat](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/duplikat%20data.png "a title")
+  
+- Banyak outlier pada data sehingga harus dihapus menggunakan teknik IQR
 
 ### Variabel dalam dataset:
 
@@ -71,9 +77,43 @@ Dari visual boxplot terdapat beberapa data yang outlier sehingga harus di hapus 
 
 ![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/hapus%20outlier "a title")
 
-- Heatmap korelasi antar fitur numerik.
-- Pairplot untuk melihat relasi antar fitur.
-- Analisis rata-rata `charges` berdasarkan kategori seperti `smoker` dan `region`.
+### Analisis total sample
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/sample%20kel.png "a title")
+
+Pada data ini perempuan lebih banyak daripada laki-laki
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/sample%20smoke.png "a title")
+
+Pada data ini orang yang tidak merokok jauh lebih banyak daripada orang yang merokok
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/sample%20region.png "a title")
+
+Pada data ini orang yang dari berbeda beda daerah, daerah southwest memiliki data yang paling sedikit
+
+### Penyebaran data
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/histogram.png "a title")
+
+Dari visual tersebut umur yang paling banyak di data adalah sekitar 20 tahun, bmi paling banyak adalah 30 kg/m², kemudian orang yang tidak memiliki anak adalah data terbanyak, dan charges yang murah yang paling banyak.
+
+### Analisis rata-rata `charges` berdasarkan kategori seperti `smoker` dan `region`.
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/rata-rata%20charges.png "a title")
+
+Data orang yang merokok memiliki rata-rata harga asuransi yang sangat tinggi
+
+### Pairplot untuk melihat relasi antar fitur.
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/pairplot.png "a title")
+
+Data `age` menunjukan semakin tinggi umur maka `charges` nya juga semakin naik
+
+### Heatmap korelasi antar fitur numerik.
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/correlation.png "a title")
+
+Data `age` memiliki korelasi terhadap `charges` yang paling tinggi
 
 ## Data Preparation
 
