@@ -95,7 +95,7 @@ Alasan:
 Beberapa model regresi digunakan, antara lain:
 
 **1. K-Nearest Neighbors (KNN) Regressor**
-Alasan: KNN mudah dipahami dan cocok untuk melihat hubungan lokal antar data.
+KNN (K-Nearest Neighbors) bekerja dengan mencari sejumlah tetangga terdekat (misalnya K = 3) dari data yang ingin diprediksi, lalu hasil prediksi diambil dari rata-rata nilai tetangga tersebut (untuk regresi) atau mayoritas kelasnya (untuk klasifikasi). Pada kasus ini menggunakan regresi
 
 Kelebihan:
 - Non-parametrik, tidak mengasumsikan bentuk distribusi data.
@@ -105,10 +105,10 @@ Kekurangan:
 - Sensitif terhadap skala dan outlier.
 - Lambat saat prediksi jika data besar (karena perlu menghitung jarak ke semua titik).
 
-**2. Random Forest Regressor**
-Alasan: Model ensambel yang stabil dan akurat, cocok untuk data dengan banyak fitur.
+**2. Random Forest**
+Random Forest adalah gabungan banyak pohon keputusan (decision tree) yang dilatih pada bagian-bagian acak dari data; hasil prediksinya diambil dari rata-rata semua prediksi pohon-pohon tersebut agar lebih akurat dan tahan terhadap overfitting.
   
-  Kelebihan:
+Kelebihan:
 - Tahan terhadap overfitting dibanding decision tree tunggal.
 - Dapat menangani data dengan fitur campuran (numerik dan kategorikal).
 
@@ -116,10 +116,10 @@ Kekurangan:
 - Kurang interpretatif (model seperti "black box").
 - Bisa lambat saat training jika jumlah pohon besar.
 
-**3. Gradient Boosting (Boosting Regressor)**
-Alasan: Model kuat yang membangun prediksi secara bertahap untuk mengurangi kesalahan.
+**3. Boosting Algorithm**
+Boosting Algorithm seperti Gradient Boosting bekerja dengan melatih model secara bertahap, di mana setiap model baru fokus memperbaiki kesalahan dari model sebelumnya; hasil akhirnya merupakan gabungan dari semua model untuk memberikan prediksi yang lebih kuat dan akurat.
   
-  Kelebihan:
+Kelebihan:
 - Performa tinggi, sering unggul dalam kompetisi.
 - Menangkap pola kompleks secara bertahap.
 
