@@ -135,21 +135,19 @@ Langkah-langkah yang dilakukan dalam tahap persiapan data beserta alasannya adal
    Fitur kategorikal seperti `sex`, `smoker`, dan `region` diubah menjadi bentuk numerik dengan one-hot encoding menggunakan `pd.get_dummies()`.  
    *Alasan:* Model machine learning tidak dapat langsung memproses data dalam bentuk teks atau kategori. One-hot encoding membantu model memahami informasi kategorikal dalam bentuk numerik tanpa menimbulkan urutan palsu antar kategori.
 
-5. **Rename kolom**
-   Kolom `Heart Attack Risk_Yes` menjadi `Heart Attack Risk` dan `smoker_yes` menjadi `smoker`.
-
+5. **Rename Fitur**  
+   Fitur `Heart Attack Risk_Yes` menjadi `Heart Attack Risk` dan `smoker_yes` menjadi `smoker`.  
    *Alasan:* Supaya nama kolom menjadi lebih singkat dan mudah.
 
-7. **Memindahkan Kolom**
-   Setelah proses Encoding, data `charges` menjadi di tengah, kemudian dipindahkan ke paling kanan.
-
+5. **Memindahkan Fitur**  
+   Setelah proses Encoding, Fitur `charges` menjadi di tengah, kemudian dipindahkan ke paling kanan.  
    *Alasan:* Supaya mudah dan lebih terlihat bahwa kolom `charges` merupakan data target.
 
-9. **Split Data**  
+7. **Split Data**  
    Dataset dibagi menjadi data latih (80%) dan data uji (20%).
    *Alasan:* Pemisahan ini penting agar model dapat diuji pada data yang belum pernah dilihat sebelumnya, sehingga performa model dapat dievaluasi secara adil dan realistis.
 
-10. **Standarisasi Fitur Numerik**  
+8. **Standarisasi Fitur Numerik**  
    Fitur numerik seperti `age`, `bmi`, dan `children` distandarisasi menggunakan `StandardScaler`, sehingga memiliki rata-rata 0 dan standar deviasi 1.  
    *Alasan:* Standarisasi membantu algoritma model — terutama yang berbasis jarak dan gradien — untuk bekerja lebih optimal, karena skala fitur yang besar bisa mendominasi proses pelatihan.
 
