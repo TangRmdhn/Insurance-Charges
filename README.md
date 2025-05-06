@@ -56,7 +56,7 @@ Dataset yang digunakan adalah [Insurance Dataset](https://www.kaggle.com/dataset
   
 - Banyak outlier pada data sehingga harus dihapus menggunakan teknik IQR
 
-### Variabel dalam dataset:
+### Fitur dalam dataset:
 
 - `age` : usia individu
 - `sex` : jenis kelamin
