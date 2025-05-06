@@ -214,8 +214,6 @@ MAE = (1/n) * Σ |yᵢ - ŷᵢ|
 - Nilai MAE lebih rendah menunjukkan prediksi lebih akurat.
 - MAE tidak sensitif terhadap outlier karena tidak memanfaatkan kuadrat selisih.
 
----
-
 #### 2. Mean Squared Error (MSE)
 MSE menghitung rata-rata kuadrat selisih antara nilai prediksi dan nilai aktual:
 
@@ -223,5 +221,3 @@ MSE = (1/n) * Σ (yᵢ - ŷᵢ)²
 
 - MSE memberikan penalti lebih besar terhadap kesalahan besar.
 - Semakin kecil nilai MSE, semakin baik performa model.
-
----
