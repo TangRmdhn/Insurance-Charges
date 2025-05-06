@@ -98,6 +98,8 @@ Dari visual tersebut umur yang paling banyak di data adalah sekitar 20 tahun, bm
 ### Analisis rata-rata `charges` berdasarkan kategori seperti `smoker` dan `region`.
 
 ![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/rata-rata%20charges.png "a title")
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/rata-rata%20charges%20region.png "a title")
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/rata-rata%20charges%20smoker.png "a title")
 
 Data orang yang merokok memiliki rata-rata harga asuransi yang sangat tinggi
 
