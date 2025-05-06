@@ -136,18 +136,20 @@ Langkah-langkah yang dilakukan dalam tahap persiapan data beserta alasannya adal
    *Alasan:* Model machine learning tidak dapat langsung memproses data dalam bentuk teks atau kategori. One-hot encoding membantu model memahami informasi kategorikal dalam bentuk numerik tanpa menimbulkan urutan palsu antar kategori.
 
 5. **Rename kolom**
-   Kolom `Heart Attack Risk_Yes` menjadi `Heart Attack Risk` dan `smoker_yes` menjadi `smoker`
-   *Alasan:* Supaya nama kolom menjadi lebih singkat dan mudah
+   Kolom `Heart Attack Risk_Yes` menjadi `Heart Attack Risk` dan `smoker_yes` menjadi `smoker`.
 
-6. **Memindahkan Kolom**
-   Setelah proses Encoding, data `charges` menjadi di tengah, kemudian dipindahkan ke paling kanan
-   *Alasan:* Supaya mudah dan lebih terlihat bahwa kolom `charges` merupakan data target
+   *Alasan:* Supaya nama kolom menjadi lebih singkat dan mudah.
 
-8. **Split Data**  
-   Dataset dibagi menjadi data latih (80%) dan data uji (20%).  
+7. **Memindahkan Kolom**
+   Setelah proses Encoding, data `charges` menjadi di tengah, kemudian dipindahkan ke paling kanan.
+
+   *Alasan:* Supaya mudah dan lebih terlihat bahwa kolom `charges` merupakan data target.
+
+9. **Split Data**  
+   Dataset dibagi menjadi data latih (80%) dan data uji (20%).
    *Alasan:* Pemisahan ini penting agar model dapat diuji pada data yang belum pernah dilihat sebelumnya, sehingga performa model dapat dievaluasi secara adil dan realistis.
 
-9. **Standarisasi Fitur Numerik**  
+10. **Standarisasi Fitur Numerik**  
    Fitur numerik seperti `age`, `bmi`, dan `children` distandarisasi menggunakan `StandardScaler`, sehingga memiliki rata-rata 0 dan standar deviasi 1.  
    *Alasan:* Standarisasi membantu algoritma model — terutama yang berbasis jarak dan gradien — untuk bekerja lebih optimal, karena skala fitur yang besar bisa mendominasi proses pelatihan.
 
