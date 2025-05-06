@@ -39,7 +39,16 @@ Dalam konteks global, asuransi kesehatan tidak hanya berperan dalam aspek finans
 
 ## Data Understanding
 
-Dataset yang digunakan adalah [Insurance Dataset](https://www.kaggle.com/datasets/mirichoi0218/insurance) dari Kaggle, yang berisi 1338 sampel. Setiap baris mewakili informasi satu individu.
+Dataset yang digunakan adalah [Insurance Dataset](https://www.kaggle.com/datasets/mirichoi0218/insurance)
+
+### Jumlah data : 
+- Baris : 1338
+- Kolom : 7
+
+### Kondisi data
+- Tidak ada missing value
+- Terdapat 1 data duplikat ssehingga harus di hapus
+- Banyak outlier pada data dan dihapus menggunakan teknik IQR
 
 ### Variabel dalam dataset:
 
@@ -51,8 +60,17 @@ Dataset yang digunakan adalah [Insurance Dataset](https://www.kaggle.com/dataset
 - `region` : wilayah tempat tinggal
 - `charges` : biaya asuransi (variabel target)
 
-EDA dilakukan dengan:
-- Visualisasi boxplot dan histogram untuk mengecek distribusi dan outlier.
+### Visualisasi boxplot untuk mengecek outlier.
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/outlier%20age.png "a title")
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/outlier%20bmi.png "a title")
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/outlier%20childern.png "a title")
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/outlier%20charges.png "a title")
+
+Dari visual boxplot terdapat beberapa data yang outlier sehingga harus di hapus menggunakan teknik IQR
+
+![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/hapus%20outlier "a title")
+
 - Heatmap korelasi antar fitur numerik.
 - Pairplot untuk melihat relasi antar fitur.
 - Analisis rata-rata `charges` berdasarkan kategori seperti `smoker` dan `region`.
@@ -61,10 +79,12 @@ EDA dilakukan dengan:
 
 Langkah-langkah yang dilakukan:
 
-1. **Pemeriksaan dan penghapusan outlier** menggunakan IQR.
-2. **Encoding fitur kategorikal** dengan `pd.get_dummies` (one-hot encoding).
-3. **Standarisasi** fitur numerik (`age`, `bmi`, `children`) menggunakan `StandardScaler`.
-4. **Splitting data** menjadi train dan test (90% - 10%).
+1. **Pemeriksaan missing values** Tidak ada missing values
+2. **Pemeriksaan duplikat data** Terdapat 1 data yang duplikat sehingga harus dihapus
+3. **Pemeriksaan dan penghapusan outlier** menggunakan IQR.
+4. **Encoding fitur kategorikal** dengan `pd.get_dummies` (one-hot encoding).
+5. **Splitting data** menjadi train dan test (80% - 20%).
+6. **Standarisasi** fitur numerik (`age`, `bmi`, `children`) menggunakan `StandardScaler`.
 
 Alasan:  
 - Penghapusan outlier dilakukan untuk menghindari distorsi terhadap model regresi.
