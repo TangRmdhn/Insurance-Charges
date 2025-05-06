@@ -115,18 +115,31 @@ Data `age` memiliki korelasi terhadap `charges` yang paling tinggi
 
 ## Data Preparation
 
-Langkah-langkah yang dilakukan:
+Langkah-langkah yang dilakukan dalam tahap persiapan data beserta alasannya adalah sebagai berikut:
 
-1. **Pemeriksaan missing values** Tidak ada missing values
-2. **Pemeriksaan duplikat data** Terdapat 1 data yang duplikat sehingga harus dihapus
-3. **Pemeriksaan dan penghapusan outlier** menggunakan IQR.
-4. **Encoding fitur kategorikal** dengan `pd.get_dummies` (one-hot encoding).
-5. **Splitting data** menjadi train dan test (80% - 20%).
-6. **Standarisasi** fitur numerik (`age`, `bmi`, `children`) menggunakan `StandardScaler`.
+1. **Pemeriksaan Missing Values**  
+   Data diperiksa terlebih dahulu untuk mengetahui apakah ada nilai yang kosong.  
+   *Alasan:* Missing values dapat mengganggu proses pelatihan model, karena sebagian algoritma tidak dapat menangani nilai kosong. Namun, tidak ditemukan missing values, jadi tidak diperlukan penanganan lebih lanjut.
 
-Alasan:  
-- Penghapusan outlier dilakukan untuk menghindari distorsi terhadap model regresi.
-- Normalisasi numerik penting agar model tidak bias terhadap fitur dengan skala besar.
+2. **Pemeriksaan Duplikat Data**  
+   Dataset dicek untuk mendeteksi baris data yang sama persis (duplikat). Terdapat 1 baris yang duplikat dan kemudian dihapus.  
+   *Alasan:* Data duplikat bisa menyebabkan model belajar pola yang salah atau terlalu percaya diri terhadap informasi yang sama, sehingga mempengaruhi performa.
+
+3. **Deteksi dan Penghapusan Outlier**  
+   Outlier dicari menggunakan metode IQR (Interquartile Range). Data dengan nilai ekstrem yang berada jauh dari distribusi normal dihapus.  
+   *Alasan:* Outlier dapat mempengaruhi model secara tidak proporsional, terutama pada algoritma berbasis regresi, sehingga perlu diatasi agar hasil model lebih stabil dan akurat.
+
+4. **Encoding Fitur Kategorikal**  
+   Fitur kategorikal seperti `sex`, `smoker`, dan `region` diubah menjadi bentuk numerik dengan one-hot encoding menggunakan `pd.get_dummies()`.  
+   *Alasan:* Model machine learning tidak dapat langsung memproses data dalam bentuk teks atau kategori. One-hot encoding membantu model memahami informasi kategorikal dalam bentuk numerik tanpa menimbulkan urutan palsu antar kategori.
+
+5. **Split Data**  
+   Dataset dibagi menjadi data latih (80%) dan data uji (20%).  
+   *Alasan:* Pemisahan ini penting agar model dapat diuji pada data yang belum pernah dilihat sebelumnya, sehingga performa model dapat dievaluasi secara adil dan realistis.
+
+6. **Standarisasi Fitur Numerik**  
+   Fitur numerik seperti `age`, `bmi`, dan `children` distandarisasi menggunakan `StandardScaler`, sehingga memiliki rata-rata 0 dan standar deviasi 1.  
+   *Alasan:* Standarisasi membantu algoritma model — terutama yang berbasis jarak dan gradien — untuk bekerja lebih optimal, karena skala fitur yang besar bisa mendominasi proses pelatihan.
 
 ## Modeling
 
