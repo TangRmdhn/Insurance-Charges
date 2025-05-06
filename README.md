@@ -91,8 +91,6 @@ Pada data ini orang yang tidak merokok jauh lebih banyak daripada orang yang mer
 
 Pada data ini orang yang dari berbeda beda daerah, daerah southwest memiliki data yang paling sedikit
 
-### Penyebaran data
-
 ![Alt text](https://github.com/TangRmdhn/Insurance-Charges/blob/main/Assets/histogram.png "a title")
 
 Dari visual tersebut umur yang paling banyak di data adalah sekitar 20 tahun, bmi paling banyak adalah 30 kg/m², kemudian orang yang tidak memiliki anak adalah data terbanyak, dan charges yang murah yang paling banyak.
