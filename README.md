@@ -142,15 +142,27 @@ Penjelasan:
 - MAE: Rata-rata kesalahan absolut
 - MSE: Rata-rata kuadrat kesalahan (lebih sensitif terhadap outlier)
 
-Hasil evaluasi:  
+### Evaluasi Performa Model
 
-| Model                 | MAE_train	| MSE_train | MAE_test |	MSE_test
-|----------------------|---------|----------|----------|----------|
-KNN |	2.818471 |	21797.552504 |	6.787490	| 62820.311454
-RandomForest |	0.991862	| 3596.535685 |	9.384881 |	107229.404049
-Boosting	| 3.330874	| 20654.091810 |	9.163674 |	102908.028757
+Model dievaluasi menggunakan metrik regresi Mean Absolute Error (MAE) dan Mean Squared Error (MSE). MAE mengukur rata-rata selisih absolut antara nilai prediksi dan nilai aktual, sedangkan MSE menghitung rata-rata kuadrat dari selisih tersebut. MAE lebih mudah diinterpretasikan dan tidak terlalu sensitif terhadap outlier, sedangkan MSE memberikan penalti lebih besar terhadap kesalahan besar, sehingga cocok untuk mengevaluasi seberapa jauh prediksi meleset dari nilai sebenarnya.
 
-KNN adalah pilihan terbaik untuk generalisasi karena memiliki MAE dan MSE test paling rendah, meskipun error training-nya tidak paling kecil.
+Berikut adalah hasil evaluasi dari tiga model yang digunakan:
+
+| Model         | MAE (Train) | MSE (Train) | MAE (Test) | MSE (Test) |
+|---------------|-------------|-------------|------------|------------|
+| KNN           | 2.818       | 21,797.55   | **6.787**  | 62,820.31 |
+| Random Forest | 0.991  | 3,596.54| 9.384      | 107,229.40  |
+| Boosting      | 3.330       | 20,654.09   | 9.163      | 102,908.03  |
+
+Model KNN menunjukkan performa terbaik dalam hal generalisasi karena memiliki nilai MAE dan MSE paling rendah pada data uji. Meskipun model Random Forest memiliki error paling kecil pada data latih, performanya pada data uji kurang baik, yang mengindikasikan kemungkinan overfitting. Sementara itu, model Boosting berada di antara keduanya, dengan performa uji yang cukup baik, tetapi tidak sebaik KNN.
+
+### Evaluasi Kesesuaian dengan Business Understanding
+
+Model yang dikembangkan dalam proyek ini telah berhasil menjawab problem statements yang dirumuskan sebelumnya. Model mampu memprediksi biaya asuransi (`charges`) berdasarkan atribut pribadi seseorang seperti usia, BMI, jumlah anak, status merokok, dan lainnya. Selain itu, hasil eksplorasi data menunjukkan bahwa fitur seperti `smoker`, `age`, dan `bmi` memiliki kontribusi signifikan terhadap nilai `charges`, sesuai dengan hipotesis awal. Fitur yang paling berkontribusi adalah fitur `age` karena pada correlation matriks memiliki nilai korelasi 0.44 dan menempati yang tertinggi.
+
+Tujuan utama proyek ini, yaitu membangun model prediktif yang mampu memperkirakan `charges` untuk data baru, telah tercapai. Ketiga model yang digunakan mampu mempelajari pola dari data historis dan melakukan prediksi pada data uji dengan tingkat kesalahan yang dapat diterima. Selain itu, proyek ini juga berhasil mengidentifikasi fitur yang memengaruhi biaya asuransi yaitu fitur `age`, yang sangat berguna bagi perusahaan dalam menyusun strategi penetapan premi secara lebih personal dan akurat. 
+
+Secara keseluruhan, model KNN dipilih sebagai model akhir karena memiliki performa terbaik pada data uji, yang menunjukkan kemampuannya dalam melakukan generalisasi terhadap data baru. Model ini dinilai mampu memenuhi kebutuhan bisnis dalam memprediksi biaya asuransi secara lebih akurat, sehingga dapat membantu perusahaan dalam mengelola risiko finansial dan meningkatkan efisiensi dalam penetapan premi.
 
 ### Metrik Evaluasi Model
 
